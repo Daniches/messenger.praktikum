@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #E9940C;
+  --accent-color: #E90C0C;
+  --background-color: #242424;
+  --background-darken-color: #1D1D1D;
+  --text-color: #FFFFFF;
+  --error-color: #E90C0C;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  min-height: 48px;
+  min-width: 384px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 80%, white);
+  }
+}
