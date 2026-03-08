@@ -1,22 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "./components/button/button.css";
+@import "./components/button/_variant/button_variant_primary.css";
+@import "./components/button/_variant/button_variant_secondary.css";
+@import "./components/button/_variant/button_variant_tertiary.css";
+
+@import "./components/input-field/input-field.css";
+@import "./components/input-field/input-field__label.css";
+@import "./components/input-field/input-field__alert.css";
+@import "./components/input-field/input-field__label.css";
+@import "./components/input-field/input-field__text-field.css";
+
+@import "./components/card-form/card-form.css";
+@import "./components/card-form/card-form__heading.css";
+@import "./components/card-form/card-form__block-wrapper.css";
+@import "./components/card-form/card-form__text.css";
+
+@import "./components/navigation-footer/navigation-footer.css";
+@import "./components/navigation-footer/navigation-footer__link.css";
+
 :root {
   --primary-color: #E9940C;
   --accent-color: #E90C0C;
   --background-color: #242424;
   --background-darken-color: #1D1D1D;
+  --background-darken-semitransparent-color: #00000033;
   --text-color: #FFFFFF;
+  --additional-text-color: #949494;
   --error-color: #E90C0C;
+
+  --font-weight-semibold: 600;
 }
 
-.button {
-  background-color: var(--primary-color);
+body {
+  font-family: "Inter", sans-serif;
   color: var(--text-color);
-  min-height: 48px;
-  min-width: 384px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
+  font-size: 16px;
 
-  &:hover {
-    background-color: color-mix(in srgb, var(--primary-color) 80%, white);
-  }
+  margin: 0;
+
+  background-image: url('/images/background-auth.svg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+button, input{
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+.page-container{
+  height: 94dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:-webkit-any-link {
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
 }

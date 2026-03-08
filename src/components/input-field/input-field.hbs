@@ -1,0 +1,24 @@
+<div class = "input-field">
+    {{#if label}} 
+        <label 
+        class="input-field__label"
+        {{parameter "for" id}}
+        >
+            {{label}}
+        </label>
+    {{/if}}
+
+    <input 
+    class="input-field__text-field"
+    {{parameter "type" type}}
+    {{parameter "id" id}}
+    {{parameter "name" name}}
+    {{parameter "autocomplete" autocomplete}}
+    >
+    
+    {{#if alert}}
+        <span class="input-field__alert">
+            {{alert}}
+        </span>
+    {{/if}}
+</div>

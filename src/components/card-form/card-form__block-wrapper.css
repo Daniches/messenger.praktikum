@@ -1,0 +1,7 @@
+.card-form__block-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  height: fit-content;
+}

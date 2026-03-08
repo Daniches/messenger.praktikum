@@ -1,0 +1,7 @@
+.button_variant_primary{
+    --button-background-color: var(--primary-color);
+    --button-hover-color: color-mix(in srgb, var(--primary-color) 80%, white);
+
+    color: var(--text-color);
+    border: none;
+}

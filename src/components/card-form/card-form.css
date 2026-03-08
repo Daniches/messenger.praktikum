@@ -1,0 +1,14 @@
+.card-form {
+  background-color: var(--background-darken-semitransparent-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  padding: 30px;
+  border-radius: 30px;
+  width: 384px;
+
+  height: fit-content;
+  
+}

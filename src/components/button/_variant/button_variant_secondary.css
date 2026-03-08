@@ -1,0 +1,7 @@
+.button_variant_secondary{
+    --button-background-color: transparent;
+    --button-hover-color: color-mix(in srgb, white 10%, transparent);
+    
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
