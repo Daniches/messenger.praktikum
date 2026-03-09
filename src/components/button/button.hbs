@@ -3,7 +3,7 @@
     {{parameter "type" type}}
 >
     {{#if icon}} 
-        <span class="material-symbols-outlined">{{icon}}</span>
+        {{>icon icon_name=icon additional_classes='button__icon'}}
     {{/if}}
     
     {{#if text}}

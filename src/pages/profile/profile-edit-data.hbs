@@ -1,39 +1,40 @@
 <div class="page-container">
-    {{> navigation-header page_name="Данные профиля"}}
+    {{> navigation-header page_name="Изменить данные"}}
     <main class="content-container">
         <form class="card-form">
-            <div class="card-form__line-wrapper">
-                {{> avatar type="text" size="big" clickable=true}}
-            </div>
             <div class="card-form__block-wrapper">
                 <div class="card-form__line-wrapper">
-                    {{> output-field
+                    {{> input-field
+                        type="text"
                         name="first_name"
                         label="Имя"
                         id="user-firstname"
                         value="Михаил"
                     }}
-                    {{> output-field
+                    {{> input-field
+                        type="text"
                         name="second_name"
                         label="Фамилия"
                         id="user-secondname"
                         value="Мишкин"
                     }}
                 </div>
-
-                {{> output-field
+                {{> input-field
+                    type="text"
                     name="login"
                     label="Логин"
-                    id="user-name"
+                    id="user-login"
                     value="my_login"
                 }}
-                {{> output-field 
+                {{> input-field 
+                    type="email"
                     name="email"
                     label="Email"
                     id="user-email"
                     value="test@mail.ru"
                 }}
-                {{> output-field 
+                {{> input-field 
+                    type="tel"
                     name="phone"
                     label="Телефон"
                     id="user-phone"
@@ -41,11 +42,8 @@
                 }}
             </div>
             <div class="card-form__block-wrapper">
-                <div class="card-form__line-wrapper">
-                    {{> button variant="secondary" text="Изменить данные"}}
-                    {{> button variant="secondary" text="Обновить пароль"}}
-                </div>
-                {{> button variant="tertiary" text="Выйти"}}
+                {{> button variant="primary" text="Сохранить" type="submit"}}
+                {{> button variant="tertiary" text="Отмена"}}
             </div>
         </form>
     </main>

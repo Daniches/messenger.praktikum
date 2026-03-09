@@ -7,6 +7,7 @@
 @import "./components/button/_variant/button_variant_tertiary.css";
 @import "./components/button/_style/_style_circle.css";
 @import "./components/button/_style/_style_rounded.css";
+@import "./components/button/button__icon.css";
 
 @import "./components/input-field/input-field.css";
 @import "./components/input-field/input-field__alert.css";
@@ -34,6 +35,17 @@
 @import "./components/title/title_size_normal.css";
 @import "./components/title/title_size_small.css";
 
+@import "./components/avatar/avatar.css";
+@import "./components/avatar/avatar_clickable.css";
+@import "./components/avatar/avatar__img.css";
+@import "./components/avatar/avatar__icon.css";
+@import "./components/avatar/avatar__overlay.css";
+@import "./components/avatar/avatar__text.css";
+@import "./components/avatar/_size/avatar_size_big.css";
+@import "./components/avatar/_size/avatar_size_small.css";
+
+@import "./components/icon/icon.css";
+
 :root {
   --primary-color: #E9940C;
   --accent-color: #E90C0C;
@@ -43,6 +55,7 @@
   --text-color: #FFFFFF;
   --additional-text-color: #949494;
   --error-color: #E90C0C;
+  --hover-semitransparent-color: #00000088;
 
   --font-weight-semibold: 600;
 }

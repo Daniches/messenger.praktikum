@@ -4,4 +4,5 @@
     flex-grow: 1;
     flex-shrink: 1;
     gap: 12px;
+    justify-content:center;
 }

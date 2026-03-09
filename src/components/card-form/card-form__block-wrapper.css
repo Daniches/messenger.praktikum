@@ -4,4 +4,5 @@
     gap: 12px;
 
     height: fit-content;
+    align-items: stretch;
 }

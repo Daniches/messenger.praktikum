@@ -1,0 +1,8 @@
+.avatar_clickable{
+    cursor: pointer;
+    &:hover {
+        .avatar__icon, .avatar__overlay {
+            opacity: 1;
+        }
+    }
+}
