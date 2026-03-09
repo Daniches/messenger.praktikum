@@ -1,0 +1,19 @@
+<div class = "output-field">
+    {{#if label}} 
+        <label 
+        class="output-field__label"
+        {{parameter "for" id}}
+        >
+            {{label}}
+        </label>
+    {{/if}}
+
+    <output
+    class="output-field__text-field"
+    {{parameter "type" type}}
+    {{parameter "id" id}}
+    {{parameter "name" name}}
+    > 
+        {{value}} 
+    </output>
+</div>

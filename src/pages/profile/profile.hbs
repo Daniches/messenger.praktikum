@@ -1,52 +1,46 @@
 <div class="page-container">
+    {{> navigation-header page_name="Данные профиля"}}
     <main class="content-container">
         <form class="card-form">
-            <h1 class="title title_color_text title_size_normal card-form__heading">
-                Регистрация
-            </h1>
             <div class="card-form__block-wrapper">
                 <div class="card-form__line-wrapper">
-                    {{> input-field
-                        type="text"
+                    {{> output-field
                         name="first_name"
                         label="Имя"
                         id="user-firstname"
+                        value="Михаил"
                     }}
-                    {{> input-field
-                        type="text"
+                    {{> output-field
                         name="second_name"
                         label="Фамилия"
                         id="user-secondname"
+                        value="Мишкин"
                     }}
                 </div>
-                {{> input-field
-                    type="text"
+
+                {{> output-field
                     name="login"
                     label="Логин"
-                    id="user-login"
+                    id="user-name"
+                    value="my_login"
                 }}
-                {{> input-field 
-                    type="email"
+                {{> output-field 
                     name="email"
                     label="Email"
                     id="user-email"
+                    value="test@mail.ru"
                 }}
-                {{> input-field 
-                    type="tel"
+                {{> output-field 
                     name="phone"
                     label="Телефон"
                     id="user-phone"
-                }}
-                {{> input-field 
-                    type="password"
-                    name="password"
-                    label="Пароль"
-                    id="user-password"
+                    value="+7(123)-456-78-90"
                 }}
             </div>
             <div class="card-form__block-wrapper">
-                {{> button variant="primary" text="Зарегистрироваться"}}
-                {{> button variant="tertiary" text="Уже есть аккаунт?"}}
+                {{> button variant="secondary" text="Изменить данные"}}
+                {{> button variant="secondary" text="Изменить пароль"}}
+                {{> button variant="tertiary" text="Выйти"}}
             </div>
         </form>
     </main>

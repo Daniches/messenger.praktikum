@@ -1,0 +1,7 @@
+.card-form__line-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 12px;
+}

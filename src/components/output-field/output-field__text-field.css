@@ -1,12 +1,13 @@
-.input-field__text-field{
+.output-field__text-field{
     background-color: var(--background-color);
     color: var(--text-color);
     border: none;
     border-radius: 12px;
     height: 48px;
     padding-left: 12px;
-    padding-right: 12px;
     font-weight: var(--font-weight-semibold);
+    line-height: 48px;
+    vertical-align: middle;
 
     &:focus{
         outline: 1px solid var(--primary-color);

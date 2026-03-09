@@ -1,7 +1,6 @@
-.card-form__block-wrapper{
+.output-field {
     display: flex;
     flex-direction: column;
     gap: 12px;
-
-    height: fit-content;
+    flex-grow: 1;
 }
