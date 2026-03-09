@@ -34,7 +34,7 @@ Handlebars.registerPartial('avatar', avatar);
 export default class App {
     constructor() {
         this.state = {
-            currentPage: 'profile'
+            currentPage: 'auth'
         };
         this.appElement = document.getElementById('app');
     }
