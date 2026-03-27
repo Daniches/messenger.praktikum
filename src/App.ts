@@ -1,6 +1,24 @@
 import Handlebars from 'handlebars';
 import './helpers/handlebarsHelpers';
+import {registerComponent} from '@components/registerComponent';
 
+import { Button } from '@components/button';
+registerComponent(Button);
+
+import { InputField } from '@components/input-field';
+registerComponent(InputField);
+
+import { CardForm } from '@components/card-form';
+registerComponent(CardForm);
+
+import { AuthPage, authFormData } from './pages/auth';
+registerComponent(AuthPage);
+
+import { Error404Page, error404FormData } from './pages/404';
+registerComponent(Error404Page);
+
+import { Error505Page, error505FormData } from './pages/505';
+registerComponent(Error505Page);
 
 import button from './components/button/button.hbs?raw';
 import icon from './components/icon/icon.hbs?raw';
@@ -40,10 +58,11 @@ export default class App {
     }
 
     render() {
-        let template;
+        let page, pageElement;
         switch (this.state.currentPage){
             case 'auth':
-                template = Handlebars.compile(auth);
+                page = new AuthPage(authFormData);
+                pageElement = page.element();
                 break;
             case 'register':
                 template = Handlebars.compile(register);
@@ -61,16 +80,21 @@ export default class App {
                 template = Handlebars.compile(profileEditPassword);
                 break;
             case '404':
-                template = Handlebars.compile(page404);
+                page = new Error404Page(error404FormData);
+                pageElement = page.element();
                 break;
             case '505':
-                template = Handlebars.compile(page505);
+                page = new Error505Page(error505FormData);
+                pageElement = page.element();
                 break;
             default:
                 template = Handlebars.compile(page404);
                 break;
         };
-        this.appElement.innerHTML = template({})
+        if (this.appElement && pageElement) {
+            this.appElement.innerHTML = '';
+            this.appElement.appendChild(pageElement);
+        }
         this.attachEventListeners();
     }
 

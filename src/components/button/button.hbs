@@ -1,9 +1,10 @@
 <button 
-    class="button button_variant_{{variant}} button_style_{{default style "rounded"}}"
+    class="button button_variant_{{default variant "primary"}} button_style_{{default style "rounded"}}"
     {{parameter "type" type}}
+    {{parameter "ref" ref}}
 >
     {{#if icon}} 
-        {{>icon icon_name=icon additional_classes='button__icon'}}
+        {{> icon icon_name=icon additional_classes='button__icon'}}
     {{/if}}
     
     {{#if text}}

@@ -1,0 +1,46 @@
+<form class="card-form">
+    {{#if heading}}
+        <h1 class="title title_color_text title_size_normal card-form__heading">
+            {{heading}}
+        </h1>
+    {{/if}}
+    {{#if text}}
+        <span class="card-form__text">
+            {{text}}
+        </span>
+    {{/if}}
+
+    {{#if inputs}}
+        <div class="card-form__block-wrapper">
+            {{#each inputs}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}} 
+                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value}}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value}}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+
+    {{#if buttons}}
+        <div class="card-form__block-wrapper">
+            {{#each buttons}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}} 
+                            {{{Button text=text ref=ref type=type variant=variant style=style icon=icon}}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{Button text=text ref=ref type=type variant=variant style=style icon=icon}}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+    
+</form>

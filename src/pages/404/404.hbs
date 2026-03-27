@@ -1,14 +1,12 @@
 <div class="page-container">
     <main class="content-container">
-        <form class="card-form">
-            <h1 class="title title_color_text title_size_normal card-form__heading">
-                Ошибка 404
-            </h1>
-            <span class="card-form__text">
-                Ой, а тут, кажется, ничего нет
-            </span>
-            {{> button variant="tertiary" text="Вернуться"}}
-        </form>
+        {{{CardForm
+        ref=ref
+        heading=heading
+        text=text
+        buttons=buttons
+        inputs=inputs
+        }}}
     </main>
     {{> navigation-footer}}
 </div>

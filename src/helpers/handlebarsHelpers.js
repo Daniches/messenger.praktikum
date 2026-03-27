@@ -20,3 +20,11 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
   }
   return options.inverse(this);
 });
+
+Handlebars.registerHelper('ifArray', function(value, options) {
+  if (Array.isArray(value)) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
