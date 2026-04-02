@@ -6,8 +6,8 @@ export const authFormData = {
     ref: "hey",
     heading: "Авторизация",
     inputs: [
-        {label: "Логин", ref: "input-login", name: "login", type: "text"},
-        {label: "Пароль", ref: "input-password", name: "password", type:"password"},
+        {label: "Логин", ref: "input-login", name: "login", type: "text", validationRegex: /^([A-ZА-ЯЁ][a-zа-яё]*)(-[A-ZА-ЯЁ][a-zа-яё]*)*$/u, errorMessage: "Некорректный логин"},
+        {label: "Пароль", ref: "input-password", name: "password", type:"password", validationRegex: /^([A-ZА-ЯЁ][a-zа-яё]*)(-[A-ZА-ЯЁ][a-zа-яё]*)*$/u, errorMessage: "Некорректный пароль"},
     ],
     buttons: [
         {text: "Войти", ref: "button-login", type: "submit"},
@@ -15,7 +15,7 @@ export const authFormData = {
 };
 
 interface FormProps extends BlockOwnProps {
-    data;
+    [key: string]: unknown;
 }
 
 export class AuthPage extends Block <FormProps> {

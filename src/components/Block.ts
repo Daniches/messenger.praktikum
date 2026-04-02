@@ -86,6 +86,9 @@ export default abstract class Block<Props extends BlockOwnProps = BlockOwnProps>
   }
 
   private compile(): Element | null {
+    this.props.__children = [];
+    this.props.__refs = {};
+
     const html = Handlebars.compile(this.template)(this.props);
     const templateElement = document.createElement('template');
     templateElement.innerHTML = html;

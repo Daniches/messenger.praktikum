@@ -12,7 +12,7 @@ export const error404FormData = {
 };
 
 interface FormProps extends BlockOwnProps {
-    data;
+    [key: string]: unknown;
 }
 
 export class Error404Page extends Block <FormProps> {

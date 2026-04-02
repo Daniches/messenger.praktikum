@@ -14,11 +14,4 @@ export interface ButtonProps extends BlockOwnProps {
 export class Button extends Block <ButtonProps> {
   static componentName = "Button";
   protected template = template;
-
-  protected events = {
-    click: (event: Event) => {
-      event.preventDefault();
-      console.log(this.props.text + " clicked");
-    },
-  };
 }

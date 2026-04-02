@@ -8,11 +8,32 @@ registerComponent(Button);
 import { InputField } from '@components/input-field';
 registerComponent(InputField);
 
+import { OutputField } from '@components/output-field';
+registerComponent(OutputField);
+
 import { CardForm } from '@components/card-form';
 registerComponent(CardForm);
 
 import { AuthPage, authFormData } from './pages/auth';
 registerComponent(AuthPage);
+
+import { RegisterPage, registerFormData } from './pages/register';
+registerComponent(RegisterPage);
+
+import { ChatPage, chatFormData } from './pages/chat';
+registerComponent(ChatPage);
+
+import {
+    ProfilePage,
+    profileData,
+    ProfileEditDataPage,
+    profileEditDataFormData,
+    ProfileEditPasswordPage,
+    profileEditPasswordFormData,
+} from './pages/profile';
+registerComponent(ProfilePage);
+registerComponent(ProfileEditDataPage);
+registerComponent(ProfileEditPasswordPage);
 
 import { Error404Page, error404FormData } from './pages/404';
 registerComponent(Error404Page);
@@ -29,14 +50,6 @@ import navigationFooterLink from './components/navigation-footer/navigation-foot
 import navigationHeader from './components/navigation-header/navigation-header.hbs?raw';
 import avatar from './components/avatar/avatar.hbs?raw';
 
-import auth from './pages/auth/auth.hbs?raw';
-import register from './pages/register/register.hbs?raw';
-import page404 from './pages/404/404.hbs?raw';
-import page505 from './pages/505/505.hbs?raw';
-import chat from './pages/chat/chat.hbs?raw';
-import profile from './pages/profile/profile.hbs?raw';
-import profileEditData from './pages/profile/profile-edit-data.hbs?raw';
-import profileEditPassword from './pages/profile/profile-edit-password.hbs?raw';
 
 Handlebars.registerPartial('button', button);
 Handlebars.registerPartial('icon', icon);
@@ -50,6 +63,12 @@ Handlebars.registerPartial('avatar', avatar);
 
 
 export default class App {
+    private state: {
+        currentPage: string;
+    };
+
+    private appElement: HTMLElement | null;
+
     constructor() {
         this.state = {
             currentPage: 'auth'
@@ -65,19 +84,24 @@ export default class App {
                 pageElement = page.element();
                 break;
             case 'register':
-                template = Handlebars.compile(register);
+                page = new RegisterPage(registerFormData);
+                pageElement = page.element();
                 break;
             case 'chat':
-                template = Handlebars.compile(chat);
+                page = new ChatPage(chatFormData);
+                pageElement = page.element();
                 break;
             case 'profile':
-                template = Handlebars.compile(profile);
+                page = new ProfilePage(profileData);
+                pageElement = page.element();
                 break;
             case 'profile-edit-data':
-                template = Handlebars.compile(profileEditData);
+                page = new ProfileEditDataPage(profileEditDataFormData);
+                pageElement = page.element();
                 break;
             case 'profile-edit-password':
-                template = Handlebars.compile(profileEditPassword);
+                page = new ProfileEditPasswordPage(profileEditPasswordFormData);
+                pageElement = page.element();
                 break;
             case '404':
                 page = new Error404Page(error404FormData);
@@ -88,7 +112,8 @@ export default class App {
                 pageElement = page.element();
                 break;
             default:
-                template = Handlebars.compile(page404);
+                page = new Error404Page(error404FormData);
+                pageElement = page.element();
                 break;
         };
         if (this.appElement && pageElement) {
@@ -98,7 +123,7 @@ export default class App {
         this.attachEventListeners();
     }
 
-    changePage(page) {
+    changePage(page: string) {
         this.state.currentPage = page;
         this.render();
     }
@@ -108,7 +133,12 @@ export default class App {
         navigationLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.changePage(e.target.dataset.page);
+                const target = e.currentTarget as HTMLElement | null;
+                const nextPage = target?.dataset.page;
+
+                if (nextPage) {
+                    this.changePage(nextPage);
+                }
             });
         });
     }

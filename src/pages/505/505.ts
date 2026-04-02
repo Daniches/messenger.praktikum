@@ -12,7 +12,7 @@ export const error505FormData = {
 };
 
 interface FormProps extends BlockOwnProps {
-    data;
+    [key: string]: unknown;
 }
 
 export class Error505Page extends Block <FormProps> {

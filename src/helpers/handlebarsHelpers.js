@@ -1,8 +1,23 @@
 import Handlebars from "handlebars";
 
-Handlebars.registerHelper('parameter', function (parameter, value, options) {
+Handlebars.registerHelper('parameter', function () {
+    const positional = Array.from(arguments).slice(0, -1);
+    const parameter = positional[0];
+    const value = positional[1];
+    const defaultValue = positional.length >= 3 ? positional[2] : undefined;
+
+    let resolvedValue = null;
     if (value) {
-        return new Handlebars.SafeString(`${Handlebars.escapeExpression(parameter)}='${Handlebars.escapeExpression(value)}'`);
+      resolvedValue = value;
+    }
+    else if (defaultValue) {
+      resolvedValue = defaultValue;
+    }
+
+    if (resolvedValue) {
+        return new Handlebars.SafeString(
+            `${Handlebars.escapeExpression(parameter)}='${Handlebars.escapeExpression(String(resolvedValue))}'`,
+        );
     }
     return '';
 });

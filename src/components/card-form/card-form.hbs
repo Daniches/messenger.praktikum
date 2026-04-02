@@ -10,17 +10,39 @@
         </span>
     {{/if}}
 
+    {{#if avatar}}
+        <div class="card-form__line-wrapper">
+            {{> avatar type=avatar.type size=avatar.size clickable=avatar.clickable}}
+        </div>
+    {{/if}}
+
     {{#if inputs}}
         <div class="card-form__block-wrapper">
             {{#each inputs}}
                 {{#ifArray this}}
                     <div class="card-form__line-wrapper">
                         {{#each this}} 
-                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value}}}
+                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validationRegex=validationRegex errorMessage=errorMessage}}}
                         {{/each}}
                     </div>
                 {{else}}
-                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value}}}
+                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validationRegex=validationRegex errorMessage=errorMessage}}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if outputs}}
+        <div class="card-form__block-wrapper">
+            {{#each outputs}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}}
+                            {{{OutputField ref=ref label=label id=id name=name value=value}}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{OutputField ref=ref label=label id=id name=name value=value}}}
                 {{/ifArray}}
             {{/each}}
         </div>
