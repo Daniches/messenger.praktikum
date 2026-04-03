@@ -14,7 +14,8 @@
     "prebuild": "tsc --noEmit",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "lint:css": "stylelint src/style.css src/components/**/*.css"
+    "lint:css": "stylelint src/style.css src/components/**/*.css",
+    "lint:css:fix": "stylelint src/style.css src/components/**/*.css --fix"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

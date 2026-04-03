@@ -19,7 +19,7 @@
     font-size: 14px;
     font-weight: var(--font-weight-medium);
     color: var(--text-color);
-    padding: 16px 16px 0px 16px;
+    padding: 16px 16px 0;
 }
 
 .message__time{
@@ -27,5 +27,5 @@
     font-weight: var(--font-weight-medium);
     color: var(--additional-text-color);
     align-self: flex-end;
-    padding: 0 16px 6px 0px;
+    padding: 0 16px 6px 0;
 }

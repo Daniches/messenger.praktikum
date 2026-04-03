@@ -1,83 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import "@material-symbols/font-400/outlined.css";
-
-@import "./components/button/button.css";
-@import "./components/button/_variant/button_variant_primary.css";
-@import "./components/button/_variant/button_variant_secondary.css";
-@import "./components/button/_variant/button_variant_tertiary.css";
-@import "./components/button/_style/_style_circle.css";
-@import "./components/button/_style/_style_rounded.css";
-@import "./components/button/button__icon.css";
-
-@import "./components/input-field/input-field.css";
-@import "./components/input-field/input-field__alert.css";
-@import "./components/input-field/input-field__label.css";
-@import "./components/input-field/input-field__text-field.css";
-@import "./components/input-field/input-field__text-field_error.css";
-
-@import "./components/output-field/output-field.css";
-@import "./components/output-field/output-field__text-field.css";
-@import "./components/output-field/output-field__label.css";
-
-@import "./components/card-form/card-form.css";
-@import "./components/card-form/card-form__heading.css";
-@import "./components/card-form/card-form__block-wrapper.css";
-@import "./components/card-form/card-form__line-wrapper.css";
-@import "./components/card-form/card-form__text.css";
-
-@import "./components/navigation-footer/navigation-footer.css";
-@import "./components/navigation-footer/navigation-footer__link.css";
-
-@import "./components/navigation-header/navigation-header.css";
-
-@import "./components/title/title.css";
-@import "./components/title/title_color_primary.css";
-@import "./components/title/title_color_text.css";
-@import "./components/title/title_size_normal.css";
-@import "./components/title/title_size_small.css";
-
-@import "./components/avatar/avatar.css";
-@import "./components/avatar/avatar_clickable.css";
-@import "./components/avatar/avatar__img.css";
-@import "./components/avatar/avatar__icon.css";
-@import "./components/avatar/avatar__overlay.css";
-@import "./components/avatar/avatar__text.css";
-@import "./components/avatar/_size/avatar_size_big.css";
-@import "./components/avatar/_size/avatar_size_small.css";
-
-@import "./components/chat-footer/chat-footer.css";
-@import "./components/chat-header/chat-header.css";
-@import "./components/chat-header/chat-header_user.css";
-@import "./components/chat-list/chat-list__chats.css";
-@import "./components/chat-list/chat-list__header.css";
-@import "./components/chat-item/chat-item.css";
-
-@import "./components/chat-list/сhat-list.css";
-
-@import "./components/message/message.css";
-
-@import "./components/icon/icon.css";
+@import url("@material-symbols/font-400/outlined.css");
+@import url("./components/button/button.css");
+@import url("./components/button/_variant/button_variant_primary.css");
+@import url("./components/button/_variant/button_variant_secondary.css");
+@import url("./components/button/_variant/button_variant_tertiary.css");
+@import url("./components/button/_style/_style_circle.css");
+@import url("./components/button/_style/_style_rounded.css");
+@import url("./components/button/button__icon.css");
+@import url("./components/input-field/input-field.css");
+@import url("./components/input-field/input-field__alert.css");
+@import url("./components/input-field/input-field__label.css");
+@import url("./components/input-field/input-field__text-field.css");
+@import url("./components/input-field/input-field__text-field_error.css");
+@import url("./components/output-field/output-field.css");
+@import url("./components/output-field/output-field__text-field.css");
+@import url("./components/output-field/output-field__label.css");
+@import url("./components/card-form/card-form.css");
+@import url("./components/card-form/card-form__heading.css");
+@import url("./components/card-form/card-form__block-wrapper.css");
+@import url("./components/card-form/card-form__line-wrapper.css");
+@import url("./components/card-form/card-form__text.css");
+@import url("./components/navigation-footer/navigation-footer.css");
+@import url("./components/navigation-header/navigation-header.css");
+@import url("./components/title/title.css");
+@import url("./components/title/title_color_primary.css");
+@import url("./components/title/title_color_text.css");
+@import url("./components/title/title_size_normal.css");
+@import url("./components/title/title_size_small.css");
+@import url("./components/avatar/avatar.css");
+@import url("./components/avatar/avatar_clickable.css");
+@import url("./components/avatar/avatar__img.css");
+@import url("./components/avatar/avatar__icon.css");
+@import url("./components/avatar/avatar__overlay.css");
+@import url("./components/avatar/avatar__text.css");
+@import url("./components/avatar/_size/avatar_size_big.css");
+@import url("./components/avatar/_size/avatar_size_small.css");
+@import url("./components/chat-footer/chat-footer.css");
+@import url("./components/chat-header/chat-header.css");
+@import url("./components/chat-header/chat-header_user.css");
+@import url("./components/chat-list/chat-list__chats.css");
+@import url("./components/chat-list/chat-list__header.css");
+@import url("./components/chat-item/chat-item.css");
+@import url("./components/chat-list/сhat-list.css");
+@import url("./components/message/message.css");
+@import url("./components/icon/icon.css");
 
 :root {
   --primary-color: #E9940C;
   --accent-color: #E90C0C;
   --background-color: #242424;
   --background-darken-color: #1D1D1D;
-  --background-darken-semitransparent-color: #00000033;
-  --text-color: #FFFFFF;
+  --background-darken-semitransparent-color: #0003;
+  --text-color: #FFF;
   --additional-text-color: #FFFFFF80;
   --error-color: #E90C0C;
-  --hover-semitransparent-color: #00000088;
+  --hover-semitransparent-color: #0008;
   --font-weight-semibold: 600;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
   color: var(--text-color);
   font-size: 16px;
-
   margin: 0;
-
   background-image: url('/images/background-auth.svg');
   background-size: cover;
   background-attachment: fixed;
@@ -85,7 +70,7 @@ body {
 }
 
 button, input{
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 16px;
 }
 
@@ -108,7 +93,6 @@ button, input{
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-
   display: grid;
   grid-template-columns: 30% minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
@@ -136,13 +120,13 @@ button, input{
   flex-grow: 1;
   gap: 6px;
   min-height: 0;
-  padding: 32px 32px;
+  padding: 32px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--background-darken-color);
 }
 
-:-webkit-any-link {
+:any-link {
     color: var(--primary-color);
     cursor: pointer;
     text-decoration: underline;
