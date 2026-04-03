@@ -22,21 +22,21 @@ Handlebars.registerHelper('parameter', function () {
     return '';
 });
 
-Handlebars.registerHelper('default', function (parameter, value, options) {
+Handlebars.registerHelper('default', function (parameter: unknown, value: unknown, _options: Handlebars.HelperOptions) {
     if (parameter) {
         return parameter
     }
     return value;
 });
 
-Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+Handlebars.registerHelper('ifCond', function (this: unknown, v1: unknown, v2: unknown, options: Handlebars.HelperOptions) {
   if(v1 === v2) {
     return options.fn(this);
   }
   return options.inverse(this);
 });
 
-Handlebars.registerHelper('ifArray', function(value, options) {
+Handlebars.registerHelper('ifArray', function (this: unknown, value: unknown, options: Handlebars.HelperOptions) {
   if (Array.isArray(value)) {
     return options.fn(this);
   } else {
