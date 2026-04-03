@@ -1,6 +1,8 @@
-import { type BlockOwnProps } from '@components/Block';
 import Block from '@components/Block';
 import template from './404.hbs?raw';
+import type { CardFormProps } from '@components/card-form/card-form';
+
+interface PageProps extends CardFormProps {}
 
 export const error404FormData = {
     ref: "404-page",
@@ -9,13 +11,9 @@ export const error404FormData = {
     buttons: [
         {text: "Вернуться", ref: "button-return"},
     ],
-};
+} satisfies PageProps;
 
-interface FormProps extends BlockOwnProps {
-    [key: string]: unknown;
-}
-
-export class Error404Page extends Block <FormProps> {
+export class Error404Page extends Block <PageProps> {
     static componentName = "Error404Page";
     protected template = template;
 }

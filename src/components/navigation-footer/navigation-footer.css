@@ -1,6 +1,7 @@
 .navigation-footer{
     background-color: var(--background-color);
     height: 6dvh;  
+    min-height: 64px;
 
     flex-grow: 0;
     

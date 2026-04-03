@@ -3,6 +3,8 @@ import template from './auth.hbs?raw';
 import rules from '@utils/validation-rules';
 import type { CardFormProps } from '@components/card-form/card-form';
 
+interface PageProps extends CardFormProps {}
+
 export const authFormData = {
     ref: "hey",
     heading: "Авторизация",
@@ -13,9 +15,7 @@ export const authFormData = {
     buttons: [
         {text: "Войти", ref: "button-login", type: "submit" as const},
     ],
-} satisfies CardFormProps;
-
-interface PageProps extends CardFormProps {}
+} satisfies PageProps;
 
 export class AuthPage extends Block <PageProps> {
     static componentName = "AuthPage";

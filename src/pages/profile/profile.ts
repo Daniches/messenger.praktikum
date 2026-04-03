@@ -1,8 +1,13 @@
-import { type BlockOwnProps } from '@components/Block';
 import Block from '@components/Block';
 import profileTemplate from './profile.hbs?raw';
 import profileEditDataTemplate from './profile-edit-data.hbs?raw';
 import profileEditPasswordTemplate from './profile-edit-password.hbs?raw';
+import type { CardFormProps } from '@components/card-form/card-form';
+import rules from '@utils/validation-rules';
+
+interface PageProps extends CardFormProps {
+  pageName: string;
+}
 
 export const profileData = {
   ref: 'profile-form',
@@ -28,55 +33,51 @@ export const profileData = {
     ],
     { text: 'Выйти', ref: 'button-logout', variant: 'tertiary' },
   ],
-};
+} satisfies PageProps;
 
 export const profileEditDataFormData = {
   ref: 'profile-edit-data-form',
   pageName: 'Изменить данные',
   inputs: [
     [
-      { label: 'Имя', ref: 'input-first-name', name: 'first_name', type: 'text', id: 'user-firstname', value: 'Михаил' },
-      { label: 'Фамилия', ref: 'input-second-name', name: 'second_name', type: 'text', id: 'user-secondname', value: 'Мишкин' },
+      { label: 'Имя', ref: 'input-first-name', name: 'first_name', type: 'text' as const, id: 'user-firstname', value: 'Михаил', validation: rules.name },
+      { label: 'Фамилия', ref: 'input-second-name', name: 'second_name', type: 'text' as const, id: 'user-secondname', value: 'Мишкин', validation: rules.name },
     ],
-    { label: 'Логин', ref: 'input-login', name: 'login', type: 'text', id: 'user-login', value: 'my_login' },
-    { label: 'Email', ref: 'input-email', name: 'email', type: 'email', id: 'user-email', value: 'test@mail.ru' },
-    { label: 'Телефон', ref: 'input-phone', name: 'phone', type: 'tel', id: 'user-phone', value: '+7 (123) 456-78-90' },
+    { label: 'Логин', ref: 'input-login', name: 'login', type: 'text' as const, id: 'user-login', value: 'my_login', validation: rules.login },
+    { label: 'Email', ref: 'input-email', name: 'email', type: 'email' as const, id: 'user-email', value: 'test@mail.ru', validation: rules.email },
+    { label: 'Телефон', ref: 'input-phone', name: 'phone', type: 'tel' as const, id: 'user-phone', value: '+7 (123) 456-78-90', validation: rules.phone },
   ],
   buttons: [
-    { text: 'Сохранить', ref: 'button-save', type: 'submit', variant: 'primary' },
-    { text: 'Отмена', ref: 'button-cancel', variant: 'tertiary' },
+    { text: 'Сохранить', ref: 'button-save', type: 'submit' as const, variant: 'primary' as const },
+    { text: 'Отмена', ref: 'button-cancel', variant: 'tertiary' as const },
   ],
-};
+} satisfies PageProps;
 
 export const profileEditPasswordFormData = {
   ref: 'profile-edit-password-form',
   pageName: 'Обновить пароль',
   inputs: [
-    { label: 'Текущий пароль', ref: 'input-old-password', name: 'old_password', type: 'password', id: 'user-old-password' },
-    { label: 'Новый пароль', ref: 'input-new-password', name: 'new_password', type: 'password', id: 'user-password' },
-    { label: 'Повторите пароль', ref: 'input-repeat-password', name: 'new_password_repeat', type: 'password', id: 'user-password-repeat' },
+    { label: 'Текущий пароль', ref: 'input-old-password', name: 'old_password', type: 'password', id: 'user-old-password', validation: rules.password },
+    { label: 'Новый пароль', ref: 'input-new-password', name: 'new_password', type: 'password', id: 'user-password', validation: rules.password },
+    { label: 'Повторите пароль', ref: 'input-repeat-password', name: 'new_password_repeat', type: 'password', id: 'user-password-repeat', validation: rules.password },
   ],
   buttons: [
-    { text: 'Сохранить', ref: 'button-save', type: 'submit', variant: 'primary' },
-    { text: 'Отмена', ref: 'button-cancel', variant: 'tertiary' },
+    { text: 'Сохранить', ref: 'button-save', type: 'submit' as const, variant: 'primary' as const },
+    { text: 'Отмена', ref: 'button-cancel', variant: 'tertiary' as const },
   ],
-};
+} satisfies PageProps;
 
-interface FormProps extends BlockOwnProps {
-  [key: string]: unknown;
-}
-
-export class ProfilePage extends Block<FormProps> {
+export class ProfilePage extends Block<PageProps> {
   static componentName = 'ProfilePage';
   protected template = profileTemplate;
 }
 
-export class ProfileEditDataPage extends Block<FormProps> {
+export class ProfileEditDataPage extends Block<PageProps> {
   static componentName = 'ProfileEditDataPage';
   protected template = profileEditDataTemplate;
 }
 
-export class ProfileEditPasswordPage extends Block<FormProps> {
+export class ProfileEditPasswordPage extends Block<PageProps> {
   static componentName = 'ProfileEditPasswordPage';
   protected template = profileEditPasswordTemplate;
 }
