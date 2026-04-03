@@ -24,7 +24,7 @@ export const profileData = {
     ],
     { ref: 'output-login', name: 'login', label: 'Логин', id: 'user-name', value: 'my_login' },
     { ref: 'output-email', name: 'email', label: 'Email', id: 'user-email', value: 'test@mail.ru' },
-    { ref: 'output-phone', name: 'phone', label: 'Телефон', id: 'user-phone', value: '+7 (123) 456-78-90' },
+    { ref: 'output-phone', name: 'phone', label: 'Телефон', id: 'user-phone', value: '+71234567890' },
   ],
   buttons: [
     [
@@ -45,7 +45,7 @@ export const profileEditDataFormData = {
     ],
     { label: 'Логин', ref: 'input-login', name: 'login', type: 'text' as const, id: 'user-login', value: 'my_login', validation: rules.login },
     { label: 'Email', ref: 'input-email', name: 'email', type: 'email' as const, id: 'user-email', value: 'test@mail.ru', validation: rules.email },
-    { label: 'Телефон', ref: 'input-phone', name: 'phone', type: 'tel' as const, id: 'user-phone', value: '+7 (123) 456-78-90', validation: rules.phone },
+    { label: 'Телефон', ref: 'input-phone', name: 'phone', type: 'tel' as const, id: 'user-phone', value: '+71234567890', validation: rules.phone },
   ],
   buttons: [
     { text: 'Сохранить', ref: 'button-save', type: 'submit' as const, variant: 'primary' as const },

@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import './helpers/handlebarsHelpers';
+import './helpers/handlebarsHelpers.ts';
 import {registerComponent} from '@components/registerComponent';
 
 import { Button } from '@components/button';
