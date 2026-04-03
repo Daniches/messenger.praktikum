@@ -1,0 +1,24 @@
+<li class="chat-item">
+    {{> avatar type=avatar.type size="small" img=avatar.img text=avatar.text}}
+    <div class="chat-item__wrapper">
+        <div class="chat-item__heading">
+            <span class="chat-item__user">
+                {{user}}
+            </span>
+            <span class="chat-item__time">
+                {{time}}
+            </span>
+            
+        </div>
+        <div class="chat-item__content">
+            <span class="chat-item__message">
+                {{message}}
+            </span>
+            {{#if unreadMessages}}
+                <span class="chat-item__badge">
+                    {{unreadMessages}}
+                </span>
+            {{/if}}
+        </div>
+    </div>
+</li>

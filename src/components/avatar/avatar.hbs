@@ -1,10 +1,10 @@
 <div class="avatar {{#if clickable}}avatar_clickable{{/if}} avatar_size_{{default size "small"}} avatar_type_{{default type "text"}}">
     {{#ifCond type "img"}}
-        <img class="avatar__img" src="/images/avatars/avatar.jpg">
+        <img class="avatar__img" src="/images/avatars/avatar.jpg" alt="Аватар пользователя">
     
     {{else}}
-        <img class="avatar__img" src="/images/avatars/avatar-background.svg">
-        <span class="avatar__text">ММ</span>
+        <img class="avatar__img" src="/images/avatars/avatar-background.svg" alt="Фон аватара пользователя">
+        <span class="avatar__text">{{default text "MM"}}</span>
     {{/ifCond}}
 
     {{#if clickable}}

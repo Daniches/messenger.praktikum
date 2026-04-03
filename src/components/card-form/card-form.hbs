@@ -1,0 +1,68 @@
+<form class="card-form">
+    {{#if heading}}
+        <h1 class="title title_color_text title_size_normal card-form__heading">
+            {{heading}}
+        </h1>
+    {{/if}}
+    {{#if text}}
+        <span class="card-form__text">
+            {{text}}
+        </span>
+    {{/if}}
+
+    {{#if avatar}}
+        <div class="card-form__line-wrapper">
+            {{> avatar type=avatar.type size=avatar.size clickable=avatar.clickable}}
+        </div>
+    {{/if}}
+
+    {{#if inputs}}
+        <div class="card-form__block-wrapper">
+            {{#each inputs}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}} 
+                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validation=validation }}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validation=validation }}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if outputs}}
+        <div class="card-form__block-wrapper">
+            {{#each outputs}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}}
+                            {{{OutputField ref=ref label=label id=id name=name value=value}}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{OutputField ref=ref label=label id=id name=name value=value}}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+
+    {{#if buttons}}
+        <div class="card-form__block-wrapper">
+            {{#each buttons}}
+                {{#ifArray this}}
+                    <div class="card-form__line-wrapper">
+                        {{#each this}} 
+                            {{{Button text=text ref=ref type=type variant=variant style=style icon=icon}}}
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{{Button text=text ref=ref type=type variant=variant style=style icon=icon}}}
+                {{/ifArray}}
+            {{/each}}
+        </div>
+    {{/if}}
+    
+</form>
