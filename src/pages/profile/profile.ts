@@ -43,7 +43,10 @@ export const profileEditDataFormData = {
       { label: 'Имя', ref: 'input-first-name', name: 'first_name', type: 'text' as const, id: 'user-firstname', value: 'Михаил', validation: rules.name },
       { label: 'Фамилия', ref: 'input-second-name', name: 'second_name', type: 'text' as const, id: 'user-secondname', value: 'Мишкин', validation: rules.name },
     ],
-    { label: 'Логин', ref: 'input-login', name: 'login', type: 'text' as const, id: 'user-login', value: 'my_login', validation: rules.login },
+    [
+      { label: 'Отображаемое имя', ref: 'input-display-name', name: 'display_name', type: 'text' as const, id: 'user-display-name', value: 'Миша' },
+      { label: 'Логин', ref: 'input-login', name: 'login', type: 'text' as const, id: 'user-login', value: 'my_login', validation: rules.login },
+    ],
     { label: 'Email', ref: 'input-email', name: 'email', type: 'email' as const, id: 'user-email', value: 'test@mail.ru', validation: rules.email },
     { label: 'Телефон', ref: 'input-phone', name: 'phone', type: 'tel' as const, id: 'user-phone', value: '+71234567890', validation: rules.phone },
   ],
