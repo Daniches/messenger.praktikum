@@ -10,7 +10,7 @@
     {{/if}}
 
     <input 
-    class="input-field__text-field"
+    class="input-field__text-field {{#if alert}} input-field__text-field_error {{/if}}"
     {{parameter "type" type}}
     {{parameter "id" id}}
     {{parameter "name" name}}

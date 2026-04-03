@@ -13,6 +13,7 @@
 @import "./components/input-field/input-field__alert.css";
 @import "./components/input-field/input-field__label.css";
 @import "./components/input-field/input-field__text-field.css";
+@import "./components/input-field/input-field__text-field_error.css";
 
 @import "./components/output-field/output-field.css";
 @import "./components/output-field/output-field__text-field.css";

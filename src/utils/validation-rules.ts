@@ -21,7 +21,7 @@ const rules = {
   },
   message: {
     regex: /^.+$/,
-    errorMessage: "Сообщение не должно быть пустым",
+    errorMessage: "",
   },
 
 }

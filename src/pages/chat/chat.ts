@@ -1,6 +1,7 @@
 import { type BlockOwnProps } from '@components/Block';
 import Block from '@components/Block';
 import template from './chat.hbs?raw';
+import rules from '@utils/validation-rules';
 
 export const chatFormData = {
   ref: 'chat-form',
@@ -50,6 +51,7 @@ export const chatFormData = {
       time: '12:00',
     },
   ],
+  messageValidation: rules.message,
 };
 
 interface FormProps extends BlockOwnProps {
