@@ -1,54 +1,12 @@
 <div class="page-container">
     <main class="content-container">
-        <form class="card-form">
-            <h1 class="title title_color_text title_size_normal card-form__heading">
-                Регистрация
-            </h1>
-            <div class="card-form__block-wrapper">
-                <div class="card-form__line-wrapper">
-                    {{> input-field
-                        type="text"
-                        name="first_name"
-                        label="Имя"
-                        id="user-firstname"
-                    }}
-                    {{> input-field
-                        type="text"
-                        name="second_name"
-                        label="Фамилия"
-                        id="user-secondname"
-                    }}
-                </div>
-                {{> input-field
-                    type="text"
-                    name="login"
-                    label="Логин"
-                    id="user-login"
-                }}
-                {{> input-field 
-                    type="email"
-                    name="email"
-                    label="Email"
-                    id="user-email"
-                }}
-                {{> input-field 
-                    type="tel"
-                    name="phone"
-                    label="Телефон"
-                    id="user-phone"
-                }}
-                {{> input-field 
-                    type="password"
-                    name="password"
-                    label="Пароль"
-                    id="user-password"
-                }}
-            </div>
-            <div class="card-form__block-wrapper">
-                {{> button variant="primary" text="Зарегистрироваться" type="submit"}}
-                {{> button variant="tertiary" text="Уже есть аккаунт?"}}
-            </div>
-        </form>
+        {{{CardForm
+        ref=ref
+        heading=heading
+        text=text
+        buttons=buttons
+        inputs=inputs
+        }}}
     </main>
     {{> navigation-footer}}
 </div>

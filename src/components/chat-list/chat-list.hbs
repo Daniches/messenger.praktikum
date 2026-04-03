@@ -1,0 +1,12 @@
+<aside class="chat-list">
+    <div class="chat-list__header">
+        {{> avatar type="user" size="small" text="MM"}}
+        {{{InputField ref="search-input" placeholder="Поиск.."}}}
+
+    </div>
+    <ul class="chat-list__chats">
+        {{#each chatItems}}
+            {{{ChatItem user=user message=message avatar=avatar time=time unreadMessages=unreadMessages}}}
+        {{/each}}
+    </ul>
+</aside>

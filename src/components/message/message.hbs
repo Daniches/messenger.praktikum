@@ -1,0 +1,14 @@
+<article class="message 
+    {{#if my}}
+        message_mine
+    {{else}}
+        message_others
+    {{/if}}
+">
+    <span class="message__text">
+        {{message}}
+    </span>
+    <span class="message__time">
+        {{time}}
+    </span>
+</article>

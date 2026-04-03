@@ -1,13 +1,17 @@
 <div class="page-container">
-    <main class="content-container">
-        <form class="card-form">
-            <h1 class="title title_color_text title_size_normal card-form__heading">
-                Заглушка чатов
-            </h1>
-            <span class="card-form__text">
-                Тут будут находиться чаты
-            </span>
-        </form>
-    </main>
+    <div class="chat-page-container">
+        {{> chat-list}}
+        <div class="chat-page-container__content">
+            {{> chat-header}}
+            <main class="content-container">
+                <div class="messages-container">
+                {{#each messages}}
+                        {{{MessageItem my=my message=message time=time}}}
+                    {{/each}}
+                </div>
+            </main>
+            {{{ ChatFooter messageValidation=messageValidation }}}
+        </div>
+    </div>    
     {{> navigation-footer}}
 </div>

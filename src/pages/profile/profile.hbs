@@ -1,53 +1,14 @@
 <div class="page-container">
-    {{> navigation-header page_name="Данные профиля"}}
+    {{> navigation-header page_name=pageName}}
     <main class="content-container">
-        <form class="card-form">
-            <div class="card-form__line-wrapper">
-                {{> avatar type="text" size="big" clickable=true}}
-            </div>
-            <div class="card-form__block-wrapper">
-                <div class="card-form__line-wrapper">
-                    {{> output-field
-                        name="first_name"
-                        label="Имя"
-                        id="user-firstname"
-                        value="Михаил"
-                    }}
-                    {{> output-field
-                        name="second_name"
-                        label="Фамилия"
-                        id="user-secondname"
-                        value="Мишкин"
-                    }}
-                </div>
-
-                {{> output-field
-                    name="login"
-                    label="Логин"
-                    id="user-name"
-                    value="my_login"
-                }}
-                {{> output-field 
-                    name="email"
-                    label="Email"
-                    id="user-email"
-                    value="test@mail.ru"
-                }}
-                {{> output-field 
-                    name="phone"
-                    label="Телефон"
-                    id="user-phone"
-                    value="+7 (123) 456-78-90"
-                }}
-            </div>
-            <div class="card-form__block-wrapper">
-                <div class="card-form__line-wrapper">
-                    {{> button variant="secondary" text="Изменить данные"}}
-                    {{> button variant="secondary" text="Обновить пароль"}}
-                </div>
-                {{> button variant="tertiary" text="Выйти"}}
-            </div>
-        </form>
+        {{{CardForm
+        ref=ref
+        heading=heading
+        text=text
+        avatar=avatar
+        outputs=outputs
+        buttons=buttons
+        }}}
     </main>
     {{> navigation-footer}}
 </div>
