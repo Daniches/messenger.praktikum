@@ -1,12 +1,17 @@
 <div class="page-container">
-    <main class="content-container">
-        {{{CardForm
-        ref=ref
-        heading=heading
-        text=text
-        buttons=buttons
-        inputs=inputs
-        }}}
-    </main>
+    <div class="chat-page-container">
+        {{> chat-list}}
+        <div class="chat-page-container__content">
+            {{> chat-header}}
+            <main class="content-container">
+                <div class="messages-container">
+                {{#each messages}}
+                        {{{MessageItem my=my message=message time=time}}}
+                    {{/each}}
+                </div>
+            </main>
+            {{> chat-footer}}
+        </div>
+    </div>    
     {{> navigation-footer}}
 </div>

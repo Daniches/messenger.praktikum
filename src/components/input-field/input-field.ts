@@ -11,6 +11,7 @@ export interface InputFieldProps extends BlockOwnProps {
     alert?: string,
     autocomplete?: string,
     value?: string,
+    placeholder?: string,
     validation?: {
         regex: RegExp,
         errorMessage: string,

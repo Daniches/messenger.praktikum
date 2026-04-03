@@ -1,0 +1,10 @@
+.chat-list__header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    height: 72px;
+    padding: 0px 12px 0px 12px;
+    background-color: var(--background-darken-color);
+}

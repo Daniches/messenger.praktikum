@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import './helpers/handlebarsHelpers.ts';
+import './helpers/handlebarsHelpers';
 import {registerComponent} from '@components/registerComponent';
 
 import { Button } from '@components/button';
@@ -13,6 +13,12 @@ registerComponent(OutputField);
 
 import { CardForm } from '@components/card-form';
 registerComponent(CardForm);
+
+import { ChatItem } from '@components/chat-item';
+registerComponent(ChatItem);
+
+import { MessageItem } from '@components/message';
+registerComponent(MessageItem);
 
 import { AuthPage, authFormData } from './pages/auth';
 registerComponent(AuthPage);
@@ -49,6 +55,9 @@ import navigationFooter from './components/navigation-footer/navigation-footer.h
 import navigationFooterLink from './components/navigation-footer/navigation-footer__link.hbs?raw';
 import navigationHeader from './components/navigation-header/navigation-header.hbs?raw';
 import avatar from './components/avatar/avatar.hbs?raw';
+import chatFooter from './components/chat-footer/index.ts';
+import chatHeader from './components/chat-header';
+import chatList from './components/chat-list/index.ts';
 
 
 Handlebars.registerPartial('button', button);
@@ -59,8 +68,9 @@ Handlebars.registerPartial('navigation-footer', navigationFooter);
 Handlebars.registerPartial('navigation-footer-link', navigationFooterLink);
 Handlebars.registerPartial('navigation-header', navigationHeader);
 Handlebars.registerPartial('avatar', avatar);
-
-
+Handlebars.registerPartial('chat-footer', chatFooter);
+Handlebars.registerPartial('chat-header', chatHeader);
+Handlebars.registerPartial('chat-list', chatList);
 
 export default class App {
     private state: {
@@ -71,7 +81,7 @@ export default class App {
 
     constructor() {
         this.state = {
-            currentPage: 'auth'
+            currentPage: 'chat'
         };
         this.appElement = document.getElementById('app');
     }
