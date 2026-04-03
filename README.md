@@ -15,6 +15,8 @@ SPA мессенджер, разработанный в рамках курса 
 
 Для сборки и проверки сборки (на 3000 порту) - `npm run start`
 
+Для проверки линтинга - `npm run lint`
+
 ## Развернутый проект в Netlify
 Проект развернут в Netlify [по ссылке](https://daniches-messenger.netlify.app/), настроен автодеплой из ветки [deploy](https://github.com/Daniches/messenger.praktikum/tree/deploy)
 

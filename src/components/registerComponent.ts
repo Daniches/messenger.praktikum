@@ -6,7 +6,8 @@ let uniqueId = 0;
 
 interface ComponentClass {
   componentName: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // Используем any, так как можем использовать любой Block, который у нас есть (и у всех абсолютно разные пропсы)
+  // eslint-disable-next-line
   new (props: any): Block;
 }
 

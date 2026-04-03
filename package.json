@@ -12,10 +12,11 @@
     "start": "vite build && vite preview --port 3000",
     "preview": "vite preview",
     "prebuild": "tsc --noEmit",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint:ts": "eslint . --ext .ts",
+    "lint:ts:fix": "eslint . --ext .ts --fix",
     "lint:css": "stylelint src/style.css src/components/**/*.css",
-    "lint:css:fix": "stylelint src/style.css src/components/**/*.css --fix"
+    "lint:css:fix": "stylelint src/style.css src/components/**/*.css --fix",
+    "lint": "npm run lint:ts && npm run lint:css"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
