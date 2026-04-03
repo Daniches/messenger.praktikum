@@ -7,7 +7,7 @@ export interface MessageProps extends BlockOwnProps {
     message: string,
     time: string,
 }
-        
+
 export class MessageItem extends Block <MessageProps> {
   static componentName = "MessageItem";
   protected template = template;

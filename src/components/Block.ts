@@ -12,15 +12,15 @@ type EventListType = Partial<Record<keyof HTMLElementEventMap, (e: Event) => voi
 
 export default abstract class Block<Props extends BlockOwnProps = BlockOwnProps> {
   protected abstract template: string;
-  
+
   protected props = {} as Props;
-  
+
   private domElement: Element | null = null;
-  
+
   protected children: Block<object>[] = [];
-  
+
   protected refs: Record<string, Element> = {};
-  
+
   protected events: EventListType = {};
 
   constructor(props: Props = {} as Props) {
@@ -115,4 +115,4 @@ export default abstract class Block<Props extends BlockOwnProps = BlockOwnProps>
 
     return templateElement.content.firstElementChild;
   }
-} 
+}

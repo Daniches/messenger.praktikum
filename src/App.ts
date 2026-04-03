@@ -30,7 +30,6 @@ import { RegisterPage, registerFormData } from './pages/register';
 registerComponent(RegisterPage);
 
 
-
 import { ChatPage, chatFormData } from './pages/chat';
 registerComponent(ChatPage);
 

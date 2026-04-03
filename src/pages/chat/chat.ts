@@ -39,12 +39,12 @@ export const chatFormData = {
       my: true,
       message: 'Так и не понял, что это...',
       time: '11:02',
-    },  
+    },
     {
       my: false,
       message: 'Ну это обалдеть!',
       time: '11:03',
-    },  
+    },
     {
       my: false,
       message: 'Привет! Как дела?',

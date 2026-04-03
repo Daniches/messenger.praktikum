@@ -2,7 +2,7 @@ import Block from '@components/Block';
 import template from './404.hbs?raw';
 import type { CardFormProps } from '@components/card-form/card-form';
 
-interface PageProps extends CardFormProps {}
+type PageProps = CardFormProps
 
 export const error404FormData = {
     ref: "404-page",

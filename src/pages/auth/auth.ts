@@ -3,7 +3,7 @@ import template from './auth.hbs?raw';
 import rules from '@utils/validation-rules';
 import type { CardFormProps } from '@components/card-form/card-form';
 
-interface PageProps extends CardFormProps {}
+type PageProps = CardFormProps
 
 export const authFormData = {
     ref: "hey",

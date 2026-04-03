@@ -13,7 +13,7 @@ export interface ChatItemProps extends BlockOwnProps {
     time: string,
     unreadMessages?: number,
 }
-        
+
 export class ChatItem extends Block <ChatItemProps> {
   static componentName = "ChatItem";
   protected template = template;

@@ -1,7 +1,7 @@
 import Handlebars from "handlebars";
 
-Handlebars.registerHelper('parameter', function () {
-    const positional = Array.from(arguments).slice(0, -1);
+Handlebars.registerHelper('parameter', function (...args: unknown[]) {
+    const positional = args.slice(0, -1);
     const parameter = positional[0];
     const value = positional[1];
     const defaultValue = positional.length >= 3 ? positional[2] : undefined;
@@ -16,13 +16,13 @@ Handlebars.registerHelper('parameter', function () {
 
     if (resolvedValue) {
         return new Handlebars.SafeString(
-            `${Handlebars.escapeExpression(parameter)}='${Handlebars.escapeExpression(String(resolvedValue))}'`,
+            `${Handlebars.escapeExpression(String(parameter))}='${Handlebars.escapeExpression(String(resolvedValue))}'`,
         );
     }
     return '';
 });
 
-Handlebars.registerHelper('default', function (parameter: unknown, value: unknown, _options: Handlebars.HelperOptions) {
+Handlebars.registerHelper('default', function (parameter: unknown, value: unknown) {
     if (parameter) {
         return parameter
     }

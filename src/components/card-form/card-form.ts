@@ -25,17 +25,17 @@ export interface CardFormProps extends BlockOwnProps {
 export class CardForm extends Block <CardFormProps> {
   static componentName = "CardForm";
   protected template = template;
-  
+
   protected events = {
     submit: (event: Event) => {
       event.preventDefault();
 
-      let data: Record<string, string> = {};
+      const data: Record<string, string> = {};
       for (const child of this.children) {
         if (child instanceof InputField) {
 
           const { name, value, validation } = child.getInputPropsForValidation();
-          if (validation.regex.test(value)) { 
+          if (validation.regex.test(value)) {
             data[name] = value
           } else {
             return;

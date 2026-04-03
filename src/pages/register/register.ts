@@ -3,7 +3,7 @@ import template from './register.hbs?raw';
 import type { CardFormProps } from '@components/card-form/card-form';
 import rules from '@utils/validation-rules';
 
-interface PageProps extends CardFormProps {}
+type PageProps = CardFormProps
 
 export const registerFormData = {
   ref: 'register-form',
