@@ -1,0 +1,6 @@
+.card-form__text{
+    color: var(--text-color);
+    
+    align-self: center;
+    margin: 0;
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "@material-symbols/font-400/outlined.css";
+
+@import "./components/button/button.css";
+@import "./components/button/_variant/button_variant_primary.css";
+@import "./components/button/_variant/button_variant_secondary.css";
+@import "./components/button/_variant/button_variant_tertiary.css";
+@import "./components/button/_style/_style_circle.css";
+@import "./components/button/_style/_style_rounded.css";
+@import "./components/button/button__icon.css";
+
+@import "./components/input-field/input-field.css";
+@import "./components/input-field/input-field__alert.css";
+@import "./components/input-field/input-field__label.css";
+@import "./components/input-field/input-field__text-field.css";
+
+@import "./components/output-field/output-field.css";
+@import "./components/output-field/output-field__text-field.css";
+@import "./components/output-field/output-field__label.css";
+
+@import "./components/card-form/card-form.css";
+@import "./components/card-form/card-form__heading.css";
+@import "./components/card-form/card-form__block-wrapper.css";
+@import "./components/card-form/card-form__line-wrapper.css";
+@import "./components/card-form/card-form__text.css";
+
+@import "./components/navigation-footer/navigation-footer.css";
+@import "./components/navigation-footer/navigation-footer__link.css";
+
+@import "./components/navigation-header/navigation-header.css";
+
+@import "./components/title/title.css";
+@import "./components/title/title_color_primary.css";
+@import "./components/title/title_color_text.css";
+@import "./components/title/title_size_normal.css";
+@import "./components/title/title_size_small.css";
+
+@import "./components/avatar/avatar.css";
+@import "./components/avatar/avatar_clickable.css";
+@import "./components/avatar/avatar__img.css";
+@import "./components/avatar/avatar__icon.css";
+@import "./components/avatar/avatar__overlay.css";
+@import "./components/avatar/avatar__text.css";
+@import "./components/avatar/_size/avatar_size_big.css";
+@import "./components/avatar/_size/avatar_size_small.css";
+
+@import "./components/icon/icon.css";
+
+:root {
+  --primary-color: #E9940C;
+  --accent-color: #E90C0C;
+  --background-color: #242424;
+  --background-darken-color: #1D1D1D;
+  --background-darken-semitransparent-color: #00000033;
+  --text-color: #FFFFFF;
+  --additional-text-color: #949494;
+  --error-color: #E90C0C;
+  --hover-semitransparent-color: #00000088;
+
+  --font-weight-semibold: 600;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-size: 16px;
+
+  margin: 0;
+
+  background-image: url('/images/background-auth.svg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+button, input{
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+.page-container{
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+:-webkit-any-link {
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+<div class="avatar {{#if clickable}}avatar_clickable{{/if}} avatar_size_{{default size "small"}} avatar_type_{{default type "text"}}">
+    {{#ifCond type "img"}}
+        <img class="avatar__img" src="/images/avatars/avatar.jpg">
+    
+    {{else}}
+        <img class="avatar__img" src="/images/avatars/avatar-background.svg">
+        <span class="avatar__text">ММ</span>
+    {{/ifCond}}
+
+    {{#if clickable}}
+        <div class="avatar__overlay"></div>
+        {{> icon icon_name="edit" additional_classes="avatar__icon"}}
+    {{/if}}
+</div>

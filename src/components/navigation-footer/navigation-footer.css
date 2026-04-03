@@ -1,0 +1,11 @@
+.navigation-footer{
+    background-color: var(--background-color);
+    height: 6dvh;  
+
+    flex-grow: 0;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

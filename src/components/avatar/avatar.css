@@ -1,0 +1,10 @@
+.avatar {
+    border-radius: 50%;
+    
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    place-items: center;
+    
+}

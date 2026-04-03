@@ -1,0 +1,6 @@
+.avatar__text {
+    width: fit-content;
+    height: fit-content;
+    grid-area: 1 / 1;
+    color: var(--text-color);
+}

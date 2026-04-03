@@ -1,0 +1,8 @@
+.avatar__icon {
+    width: 50%;
+    height: 50%;
+    font-size: 70px;
+    grid-area: 1 / 1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}

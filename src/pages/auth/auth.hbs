@@ -1,0 +1,28 @@
+<div class="page-container">
+    <main class="content-container">
+        <form class="card-form">
+            <h1 class="title title_color_text title_size_normal card-form__heading">
+                Авторизация
+            </h1>
+            <div class="card-form__block-wrapper">
+                {{> input-field
+                    type="text"
+                    name="login"
+                    label="Логин"
+                    id="user-name"
+                }}
+                {{> input-field 
+                    type="password"
+                    name="password"
+                    label="Пароль"
+                    id="user-password"
+                }}
+            </div>
+            <div class="card-form__block-wrapper">
+                {{> button variant="primary" text="Войти" type="submit"}}
+                {{> button variant="tertiary" text="Нет аккаунта?"}}
+            </div>
+        </form>
+    </main>
+    {{> navigation-footer}}
+</div>
