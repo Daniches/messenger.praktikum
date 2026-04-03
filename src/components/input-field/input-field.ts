@@ -11,22 +11,32 @@ export interface InputFieldProps extends BlockOwnProps {
     alert?: string,
     autocomplete?: string,
     value?: string,
-    errorMessage?: string,
-    validationRegex?: RegExp,
+    validation?: {
+        regex: RegExp,
+        errorMessage: string,
+    }
 }
 
 export class InputField extends Block <InputFieldProps> {
   static componentName = "InputField";
   protected template = template;
 
+  public getInputPropsForValidation(): { name: string; value: string; validation: { regex: RegExp; errorMessage: string } } {
+    return {
+      name: this.props.name ?? '',
+      value:  this.props.value ?? '',
+      validation: this.props.validation ?? { regex: /./, errorMessage: '' },
+    };
+  }
+
   protected events = {
     keyup: () => {
       this.props.value = (this.refs['field'] as HTMLInputElement).value;
     },
     focusout: () => {
-      if (this.props.value && this.props.validationRegex && this.props.errorMessage) {
-        if (!this.props.validationRegex.test(this.props.value)) {
-          this.props.alert = this.props.errorMessage;
+      if (this.props.validation) {
+        if (!this.props.validation.regex.test(this.props.value ?? '')) {
+          this.props.alert = this.props.validation.errorMessage;
         } else {
           this.props.alert = undefined;
         }

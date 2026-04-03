@@ -6,8 +6,9 @@ import template from './card-form.hbs?raw';
 import type { ButtonProps } from '@components/button/button';
 import type { InputFieldProps } from '@components/input-field/input-field';
 import type { OutputFieldProps } from '@components/output-field/output-field';
+import { InputField } from '@components/input-field/input-field';
 
-interface CardFormProps extends BlockOwnProps {
+export interface CardFormProps extends BlockOwnProps {
     ref: string,
     heading?: string,
     text?: string,
@@ -28,7 +29,20 @@ export class CardForm extends Block <CardFormProps> {
   protected events = {
     submit: (event: Event) => {
       event.preventDefault();
-      console.log(this.props.ref + " submitted");
+
+      let data: Record<string, string> = {};
+      for (const child of this.children) {
+        if (child instanceof InputField) {
+
+          const { name, value, validation } = child.getInputPropsForValidation();
+          if (validation.regex.test(value)) { 
+            data[name] = value
+          } else {
+            return;
+          }
+        }
+      }
+      console.log(data);
     },
   };
 }

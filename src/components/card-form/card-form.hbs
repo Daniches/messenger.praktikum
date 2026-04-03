@@ -22,11 +22,11 @@
                 {{#ifArray this}}
                     <div class="card-form__line-wrapper">
                         {{#each this}} 
-                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validationRegex=validationRegex errorMessage=errorMessage}}}
+                            {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validation=validation }}}
                         {{/each}}
                     </div>
                 {{else}}
-                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validationRegex=validationRegex errorMessage=errorMessage}}}
+                    {{{InputField ref=ref label=label type=type id=id name=name alert=alert autocomplete=autocomplete value=value validation=validation }}}
                 {{/ifArray}}
             {{/each}}
         </div>
